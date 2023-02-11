@@ -1,11 +1,8 @@
 import io.appium.java_client.android.Activity;
-import org.pageObject.android.CartPage;
-import org.pageObject.android.ProductListingPage;
 import org.pageObject.android.StoreFormPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
