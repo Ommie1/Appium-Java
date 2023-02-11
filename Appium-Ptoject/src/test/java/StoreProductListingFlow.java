@@ -3,7 +3,12 @@ import org.pageObject.android.CartPage;
 import org.pageObject.android.ProductListingPage;
 import org.pageObject.android.StoreFormPage;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 public class StoreProductListingFlow extends AppiumConfig{
 
@@ -13,13 +18,13 @@ public class StoreProductListingFlow extends AppiumConfig{
         driver.startActivity(activity);
     }
 
-    @Test (priority=1)
-    public void AddProductToCart() throws InterruptedException {
+    @Test (dataProvider = "getData")
+    public void AddProductToCart(HashMap<String,String> input) throws InterruptedException {
         StoreFormPage storeFormPage = new StoreFormPage(driver);
         ProductListingPage productListingPage = new ProductListingPage(driver);
-        storeFormPage.setNameField("Jenifer");
+        storeFormPage.setNameField(input.get("name"));
         storeFormPage.setGenderOption();
-        storeFormPage.selectCountry("Austria");
+        storeFormPage.selectCountry(input.get("country"));
         storeFormPage.setShopButton();
         productListingPage.addItemToCartWithIndex(0);
         productListingPage.clickCartIcon();
@@ -27,5 +32,10 @@ public class StoreProductListingFlow extends AppiumConfig{
         cartPage.cartPageTitle("Cart");
         cartPage.verifyProductInCart("Air Jordan 4 Retro");
         Thread.sleep(5000);
+    }
+    @DataProvider
+    public Object[][] getData() throws IOException {
+        List<HashMap<String,String>> data = getJsonData(System.getProperty("user.dir")+"//src//test//java//org//testData//shopping.json");
+        return new Object[][]{{data.get(0)}};
     }
 }

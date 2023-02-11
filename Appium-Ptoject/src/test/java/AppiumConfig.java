@@ -4,12 +4,14 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.utils.AppiumUtils;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AppiumConfig {
+public class AppiumConfig extends AppiumUtils {
     public AndroidDriver driver;
     @BeforeClass
     public void AppiumStart() throws MalformedURLException {
