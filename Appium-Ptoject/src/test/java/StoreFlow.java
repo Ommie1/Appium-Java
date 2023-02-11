@@ -1,10 +1,27 @@
+import io.appium.java_client.android.Activity;
 import org.pageObject.android.CartPage;
 import org.pageObject.android.ProductListingPage;
 import org.pageObject.android.StoreFormPage;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 public class StoreFlow extends AppiumConfig{
-    @Test
+
+    @BeforeMethod
+    public void setupTest(){
+        Activity activity = new Activity("com.androidsample.generalstore", "com.androidsample.generalstore.MainActivity");
+        driver.startActivity(activity);
+    }
+    @Test (priority=1)
     public void StoreLandingForm() throws InterruptedException {
+        StoreFormPage storeFormPage = new StoreFormPage(driver);
+        storeFormPage.setNameField("Jenifer");
+        storeFormPage.setGenderOption();
+        storeFormPage.selectCountry("Austria");
+        storeFormPage.setShopButton();
+        Thread.sleep(5000);
+    }
+    @Test (priority=2)
+    public void AddProductToCart() throws InterruptedException {
         StoreFormPage storeFormPage = new StoreFormPage(driver);
         ProductListingPage productListingPage = new ProductListingPage(driver);
         storeFormPage.setNameField("Jenifer");
