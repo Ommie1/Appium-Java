@@ -4,7 +4,6 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 public class AppiumConfig {
     public AndroidDriver driver;
-
     @BeforeClass
     public void AppiumStart() throws MalformedURLException {
         AppiumDriverLocalService service = new AppiumServiceBuilder()
