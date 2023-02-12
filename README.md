@@ -12,8 +12,7 @@ Following are the softwares need to be installed,
 4. Appium 2.0.0-beta.55
 5. Node v16.15.1 (Setup Environment variables)
 
-
-## How to configure test and execute
+## How to configure and run test
 
 Please follow the steps,
 
@@ -26,4 +25,3 @@ Please follow the steps,
 
 ## Author
 Syed Umair Hassan
-
