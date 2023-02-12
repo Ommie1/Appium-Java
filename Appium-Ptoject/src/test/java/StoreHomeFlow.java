@@ -3,18 +3,21 @@ import org.pageObject.android.StoreFormPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.utils.AppiumAndroidConfig;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-public class StoreHomeFlow extends AppiumConfig{
+public class StoreHomeFlow extends AppiumAndroidConfig {
     @BeforeMethod
-    public void setupTest(){
+    public void setupTest() {
         Activity activity = new Activity("com.androidsample.generalstore", "com.androidsample.generalstore.MainActivity");
         driver.startActivity(activity);
     }
-    @Test (dataProvider = "getData")
-    public void StoreLandingForm(HashMap<String,String> input) throws InterruptedException {
+
+    @Test(dataProvider = "getData")
+    public void StoreLandingForm(HashMap<String, String> input) throws InterruptedException {
         StoreFormPage storeFormPage = new StoreFormPage(driver);
         storeFormPage.setNameField(input.get("name"));
         storeFormPage.setGenderOption();
@@ -22,9 +25,10 @@ public class StoreHomeFlow extends AppiumConfig{
         storeFormPage.setShopButton();
         Thread.sleep(5000);
     }
+
     @DataProvider
     public Object[][] getData() throws IOException {
-       List<HashMap<String,String>> data = getJsonData(System.getProperty("user.dir")+"//src//test//java//org//testData//shopping.json");
-       return new Object[][]{{data.get(0)}};
+        List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "//src//test//java//org//shopping.json");
+        return new Object[][]{{data.get(0)}};
     }
 }
