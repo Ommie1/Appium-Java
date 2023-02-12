@@ -28,7 +28,7 @@ public class StoreHomeFlow extends AppiumAndroidConfig {
 
     @DataProvider
     public Object[][] getData() throws IOException {
-        List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "//src//test//java//org//shopping.json");
+        List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "//src//main//java//org//testData//shopping.json");
         return new Object[][]{{data.get(0)}};
     }
 }
