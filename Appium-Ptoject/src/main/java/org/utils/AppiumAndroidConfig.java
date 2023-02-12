@@ -6,14 +6,12 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.utils.AppiumUtils;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AppiumAndroidConfig extends AppiumUtils {
+public class AppiumAndroidConfig extends AppiumCommonUtils {
     public AndroidDriver driver;
 
     @BeforeClass
@@ -23,7 +21,6 @@ public class AppiumAndroidConfig extends AppiumUtils {
         options.setDeviceName("Nexus-6");
         options.setApp("D://AutomationWork//Java-Framework//Appium-Project//General-Store.apk");
         driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), options);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AfterClass

@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class AppiumUtils {
+public abstract class AppiumCommonUtils {
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
         String jsonData = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
         ObjectMapper mapper = new ObjectMapper();

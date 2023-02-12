@@ -18,6 +18,7 @@ public class StoreFormPage extends AndroidActions {
     private WebElement countryDropdown;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
     private WebElement shopButton;
+
     public StoreFormPage(AndroidDriver driver) {
         super(driver);
         this.driver = driver;
