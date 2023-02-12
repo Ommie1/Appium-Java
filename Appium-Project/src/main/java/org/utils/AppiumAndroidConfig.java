@@ -7,21 +7,26 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import java.net.MalformedURLException;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
 
 public class AppiumAndroidConfig extends AppiumCommonUtils {
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
 
     @BeforeClass
-    public void AppiumStart() throws MalformedURLException {
-        service = new AppiumServiceBuilder().withIPAddress("127.0.0.1").usingPort(4723).build();
+    public void AppiumStart() throws IOException {
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//org//resources//androidConfig.properties");
+        prop.load(fis);
+        service = new AppiumServiceBuilder().withIPAddress(prop.getProperty("ipAddress")).usingPort(Integer.parseInt(prop.getProperty("port"))).build();
         service.start();
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setDeviceName("Nexus-6");
-        options.setApp("D://AutomationWork//Java-Framework//Appium-Project//General-Store.apk");
-        driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), options);
+        options.setDeviceName(prop.getProperty("deviceName"));
+        options.setApp(System.getProperty("user.dir") + "//General-Store.apk");
+        driver = new AndroidDriver(new URL(prop.getProperty("sessionURL")), options);
     }
 
     @AfterClass
