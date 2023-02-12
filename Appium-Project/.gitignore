@@ -8,4 +8,4 @@ log/
 
 */target/**
 */test-output/**
-/target/
+target
