@@ -9,14 +9,15 @@ import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 public class AppiumAndroidConfig extends AppiumCommonUtils {
     public AndroidDriver driver;
+    public AppiumDriverLocalService service;
 
     @BeforeClass
     public void AppiumStart() throws MalformedURLException {
-        AppiumDriverLocalService service = new AppiumServiceBuilder().withIPAddress("127.0.0.1").usingPort(4723).build();
+        service = new AppiumServiceBuilder().withIPAddress("127.0.0.1").usingPort(4723).build();
+        service.start();
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("Nexus-6");
         options.setApp("D://AutomationWork//Java-Framework//Appium-Project//General-Store.apk");
@@ -26,5 +27,6 @@ public class AppiumAndroidConfig extends AppiumCommonUtils {
     @AfterClass
     public void tearDown() {
         driver.quit();
+        service.stop();
     }
 }
