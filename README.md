@@ -13,7 +13,7 @@ Following are the softwares need to be installed,
 5. Node v16.15.1 (Setup Environment variables)
 
 
-## How to start with the project
+## How to configure test and execute
 
 Please follow the steps,
 
