@@ -15,13 +15,11 @@ public class ProductListingPage extends AndroidActions {
     private List<WebElement> addToCart;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/appbar_btn_cart")
     private WebElement cartButton;
-
     public ProductListingPage(AndroidDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-
     public void addItemToCartWithIndex(int Index) {
         addToCart.get(Index).click();
     }

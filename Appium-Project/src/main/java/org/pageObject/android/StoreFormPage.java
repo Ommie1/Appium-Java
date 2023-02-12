@@ -10,6 +10,11 @@ import org.utils.AndroidActions;
 
 public class StoreFormPage extends AndroidActions {
     AndroidDriver driver;
+    public StoreFormPage(AndroidDriver driver) {
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    }
     @AndroidFindBy(id = "com.androidsample.generalstore:id/nameField")
     private WebElement nameField;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/radioFemale")
@@ -18,28 +23,18 @@ public class StoreFormPage extends AndroidActions {
     private WebElement countryDropdown;
     @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
     private WebElement shopButton;
-
-    public StoreFormPage(AndroidDriver driver) {
-        super(driver);
-        this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-    }
-
     public void setNameField(String name) {
         nameField.sendKeys(name);
         driver.hideKeyboard();
     }
-
     public void setGenderOption() {
         genderOption.click();
     }
-
     public void selectCountry(String name) {
         countryDropdown.click();
         scrollToText(name);
         driver.findElement(By.xpath("//android.widget.TextView[@text='" + name + "']")).click();
     }
-
     public void setShopButton() {
         shopButton.click();
     }

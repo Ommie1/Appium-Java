@@ -17,16 +17,16 @@ public class AppiumAndroidConfig extends AppiumCommonUtils {
     public AppiumDriverLocalService service;
 
     @BeforeClass
-    public void AppiumStart() throws IOException {
+    public void appiumStart() throws IOException {
         Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//org//resources//androidConfig.properties");
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//org//resources//config.properties");
         prop.load(fis);
-        service = new AppiumServiceBuilder().withIPAddress(prop.getProperty("ipAddress")).usingPort(Integer.parseInt(prop.getProperty("port"))).build();
+        service = new AppiumServiceBuilder().withIPAddress(prop.getProperty("ip-address")).usingPort(Integer.parseInt(prop.getProperty("port"))).build();
         service.start();
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setDeviceName(prop.getProperty("deviceName"));
+        options.setDeviceName(prop.getProperty("device-name"));
         options.setApp(System.getProperty("user.dir") + "//General-Store.apk");
-        driver = new AndroidDriver(new URL(prop.getProperty("sessionURL")), options);
+        driver = new AndroidDriver(new URL(prop.getProperty("session-url")), options);
     }
 
     @AfterClass

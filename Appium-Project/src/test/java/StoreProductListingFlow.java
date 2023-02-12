@@ -29,8 +29,8 @@ public class StoreProductListingFlow extends AppiumAndroidConfig {
         productListingPage.addItemToCartWithIndex(0);
         productListingPage.clickCartIcon();
         CartPage cartPage = new CartPage(driver);
-        cartPage.cartPageTitle("Cart");
-        cartPage.verifyProductInCart("Air Jordan 4 Retro");
+        cartPage.cartPageTitle(input.get("cartPageTitle"));
+        cartPage.verifyProductInCart(input.get("productName"));
         Thread.sleep(5000);
     }
 
