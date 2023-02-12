@@ -21,7 +21,7 @@ Please follow the steps,
 3. Open virtual device from device manager
 4. Change virtual device name from properties file, Appium-Project\src\main\java\org\resources\androidConfig.properties
 5. Configure testng.xml file before run test using Intellig IDE
-6- Use command "mvn test -PFunctional-Tests" to execute run test on command line 
+6. Use command "mvn test -PFunctional-Tests" to execute run test on command line 
 
 ## Author
 Syed Umair Hassan
