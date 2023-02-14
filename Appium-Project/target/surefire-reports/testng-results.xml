@@ -2,58 +2,58 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-12T17:28:03Z" name="All Test Suite" finished-at="2023-02-12T17:29:06Z" duration-ms="62918">
+  <suite started-at="2023-02-12T19:05:10Z" name="All Test Suite" finished-at="2023-02-12T19:06:13Z" duration-ms="62805">
     <groups>
     </groups>
-    <test started-at="2023-02-12T17:28:03Z" name="Store Flow" finished-at="2023-02-12T17:28:33Z" duration-ms="30738">
+    <test started-at="2023-02-12T19:05:10Z" name="Store Flow" finished-at="2023-02-12T19:05:40Z" duration-ms="29941">
       <class name="StoreHomeFlow">
-        <test-method is-config="true" signature="AppiumStart()[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T17:28:03Z" name="AppiumStart" finished-at="2023-02-12T17:28:15Z" duration-ms="12511" status="PASS">
+        <test-method is-config="true" signature="appiumStart()[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T19:05:10Z" name="appiumStart" finished-at="2023-02-12T19:05:22Z" duration-ms="11905" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AppiumStart -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T17:28:16Z" name="setupTest" finished-at="2023-02-12T17:28:17Z" duration-ms="1637" status="PASS">
+        </test-method> <!-- appiumStart -->
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T19:05:23Z" name="setupTest" finished-at="2023-02-12T19:05:25Z" duration-ms="2082" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="StoreLandingForm(java.util.HashMap)[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T17:28:17Z" name="StoreLandingForm" data-provider="getData" finished-at="2023-02-12T17:28:33Z" duration-ms="15799" status="PASS">
+        <test-method signature="StoreLandingForm(java.util.HashMap)[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T19:05:25Z" name="StoreLandingForm" data-provider="getData" finished-at="2023-02-12T19:05:39Z" duration-ms="14808" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=Jenifer, country=Austria}]]>
+                <![CDATA[{name=Jenifer, country=Austria, cartPageTitle=Cart, productName=Air Jordan 4 Retro}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StoreLandingForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T17:28:33Z" name="tearDown" finished-at="2023-02-12T17:28:33Z" duration-ms="468" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:StoreHomeFlow@5ba3f27a]" started-at="2023-02-12T19:05:39Z" name="tearDown" finished-at="2023-02-12T19:05:40Z" duration-ms="828" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- StoreHomeFlow -->
     </test> <!-- Store Flow -->
-    <test started-at="2023-02-12T17:28:34Z" name="Product Listing Flow" finished-at="2023-02-12T17:29:06Z" duration-ms="31714">
+    <test started-at="2023-02-12T19:05:41Z" name="Product Listing Flow" finished-at="2023-02-12T19:06:13Z" duration-ms="32473">
       <class name="StoreProductListingFlow">
-        <test-method is-config="true" signature="AppiumStart()[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T17:28:34Z" name="AppiumStart" finished-at="2023-02-12T17:28:44Z" duration-ms="10531" status="PASS">
+        <test-method is-config="true" signature="appiumStart()[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T19:05:41Z" name="appiumStart" finished-at="2023-02-12T19:05:52Z" duration-ms="11362" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AppiumStart -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T17:28:44Z" name="setupTest" finished-at="2023-02-12T17:28:46Z" duration-ms="1783" status="PASS">
+        </test-method> <!-- appiumStart -->
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T19:05:52Z" name="setupTest" finished-at="2023-02-12T19:05:54Z" duration-ms="1946" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="AddProductToCart(java.util.HashMap)[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T17:28:46Z" name="AddProductToCart" data-provider="getData" finished-at="2023-02-12T17:29:05Z" duration-ms="18978" status="PASS">
+        <test-method signature="AddProductToCart(java.util.HashMap)[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T19:05:54Z" name="AddProductToCart" data-provider="getData" finished-at="2023-02-12T19:06:13Z" duration-ms="18740" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=Jenifer, country=Austria}]]>
+                <![CDATA[{name=Jenifer, country=Austria, cartPageTitle=Cart, productName=Air Jordan 4 Retro}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddProductToCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T17:29:05Z" name="tearDown" finished-at="2023-02-12T17:29:06Z" duration-ms="420" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:StoreProductListingFlow@31fa1761]" started-at="2023-02-12T19:06:13Z" name="tearDown" finished-at="2023-02-12T19:06:13Z" duration-ms="424" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
